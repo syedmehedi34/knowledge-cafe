@@ -1,8 +1,9 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
+
 import { useEffect, useState } from "react";
 import Blog from "../Blog/Blog";
 
-const Blogs = () => {
+const Blogs = ({ handleMarkAsRead, handleBookmarks }) => {
   const [blogs, setBlogs] = useState([]);
   useEffect(() => {
     fetch("blogs.json")
@@ -13,7 +14,12 @@ const Blogs = () => {
   return (
     <div className="col-span-2">
       {blogs.map((blog) => (
-        <Blog key={blog.id} blog={blog}></Blog>
+        <Blog
+          key={blog.id}
+          blog={blog}
+          handleBookmarks={handleBookmarks}
+          handleMarkAsRead={handleMarkAsRead}
+        ></Blog>
       ))}
     </div>
   );
