@@ -3,6 +3,7 @@ import Bookmark from "../Bookmark/Bookmark";
 /* eslint-disable react/prop-types */
 const Bookmarks = ({ bookmarks, readingTime }) => {
   //   console.log(bookmarks);
+
   return (
     <div className=" h-full col-span-1">
       <div
