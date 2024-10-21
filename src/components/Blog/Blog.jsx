@@ -33,9 +33,7 @@ const Blog = ({ blog, handleBookmarks, handleMarkAsRead }) => {
           </div>
           <div>
             <p className="text-2xl font-bold text-[#111111]">{author}</p>
-            <p className="text-[#11111199] font-[600]">
-              {posted_date} (4 Days ago)
-            </p>
+            <p className="text-[#11111199] font-[600]">{posted_date}</p>
           </div>
         </div>
         {/* reading time  */}
