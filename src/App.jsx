@@ -9,16 +9,20 @@ function App() {
   const [readingTime, setReadingTime] = useState(0);
 
   const handleBookmarks = (blog) => {
-    // console.log(blog);
-    const newBookmark = [...bookmarks, blog];
-    setBookmarks(newBookmark);
+    if (bookmarks.includes(blog)) {
+      setBookmarks(bookmarks.filter((bookmark) => bookmark !== blog));
+    } else {
+      setBookmarks([...bookmarks, blog]);
+    }
   };
 
-  const handleMarkAsRead = (time) => {
-    // console.log(time);
-    // const newTotalTime = readingTime + time;
-    // setReadingTime(newTotalTime);
+  const handleMarkAsRead = (id, time) => {
     setReadingTime(readingTime + time);
+
+    const remainingBookmarks = bookmarks.filter(
+      (bookmark) => bookmark.id !== id
+    );
+    setBookmarks(remainingBookmarks);
   };
 
   //

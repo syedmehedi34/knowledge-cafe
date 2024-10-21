@@ -63,7 +63,7 @@ const Blog = ({ blog, handleBookmarks, handleMarkAsRead }) => {
       </p>
       {/* mark as read  */}
       <p
-        onClick={() => handleMarkAsRead(blog.reading_time)}
+        onClick={() => handleMarkAsRead(id, reading_time)}
         className="text-[#6047EC] underline font-semibold cursor-pointer transition-transform transform active:scale-95 inline-block "
       >
         Mark as read
